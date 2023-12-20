@@ -5,8 +5,7 @@ using UnityEngine;
 public class BombObject : MonoBehaviour
 {
 
-    public GameObject Bomb;
-    private GameObject BombPrefab;
+    [SerializeField] GameObject BombPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,15 +18,15 @@ public class BombObject : MonoBehaviour
         //スペースボタンが押されたら
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            CreateBomb();
+            createBomb();
         }
     }
 
-    //ボム生成
-    void CreateBomb()
+    void createBomb()
     {
-        GameObject Bomb = Instantiate(BombPrefab, transform.position, Quaternion.identity);
-        Bomb.name = "Bomb";
+        float x = 5f;
+        float y = 5f;
+        Vector3 position = new Vector3(x, 0.5f, y);
+        Instantiate(BombPrefab, position, Quaternion.identity);
     }
-
 }
