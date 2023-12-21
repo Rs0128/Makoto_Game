@@ -14,19 +14,39 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (!isMoving)
+        PlayerControl();
+
+    }
+
+    void PlayerControl()
+    {
+        if (!Physics.Raycast(transform.position, Vector3.forward, 1.1f))
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (!isMoving && Input.GetKeyDown(KeyCode.W))
+            {
                 StartCoroutine(MovePlayer(Vector3.forward * movementWidth));
-
-            if (Input.GetKeyDown(KeyCode.A))
+            }
+        }
+        if (!Physics.Raycast(transform.position, Vector3.right, 1.1f))
+        {
+            if (!isMoving && Input.GetKeyDown(KeyCode.A))
+            {
                 StartCoroutine(MovePlayer(Vector3.left * movementWidth));
-
-            if (Input.GetKeyDown(KeyCode.S))
+            }
+        }
+        if (!Physics.Raycast(transform.position, Vector3.forward, 1.1f))
+        {
+            if (!isMoving && Input.GetKeyDown(KeyCode.S))
+            {
                 StartCoroutine(MovePlayer(Vector3.back * movementWidth));
-
-            if (Input.GetKeyDown(KeyCode.D))
+            }
+        }
+        if (!Physics.Raycast(transform.position, Vector3.forward, 1.1f))
+        {
+            if (!isMoving && Input.GetKeyDown(KeyCode.D))
+            {
                 StartCoroutine(MovePlayer(Vector3.right * movementWidth));
+            }
         }
     }
 
@@ -44,9 +64,9 @@ public class Player : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        
+
         transform.position = targetPosition;
         isMoving = false;
-        
+
     }
 }
