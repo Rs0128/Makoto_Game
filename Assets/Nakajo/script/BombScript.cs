@@ -5,28 +5,25 @@ using UnityEngine;
 public class BombObject : MonoBehaviour
 {
 
-    [SerializeField] GameObject BombPrefab;
-    // Start is called before the first frame update
-    void Start()
-    {
+    [SerializeField] GameObject bombPrefab;
+    [SerializeField]GameObject[] spawnPoints;
+    float spawnTime = 6.0f;//ボムが出る時間間隔
+    float currentTime = 0f;//現在の時間
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        //スペースボタンが押されたら
-        if (Input.GetKeyDown(KeyCode.Space))
+        currentTime += Time.deltaTime;
+        if(currentTime > spawnTime)//現在の時間がボムが出る間隔を超えたら
         {
-            createBomb();
+            currentTime = 0f;
+            StartCoroutine(CreateBomb());
         }
-    }
+    }        
 
-    void createBomb()
+    IEnumerator CreateBomb()
     {
-        float x = 5f;
-        float y = 5f;
-        Vector3 position = new Vector3(x, 0.5f, y);
-        Instantiate(BombPrefab, position, Quaternion.identity);
+        int x = Random.Range(0,spawnPoints.Length);
+        Instantiate(bombPrefab, spawnPoints[x].transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(3f);
     }
 }
