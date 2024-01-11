@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     }
 
-    void PlayerControl()
+    void PlayerControl() //プレイヤーの移動
     {
         if (!Physics.Raycast(transform.position, Vector3.forward, 1.1f))
         {
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    IEnumerator MovePlayer(Vector3 direction)
+    IEnumerator MovePlayer(Vector3 direction) //移動のコルーチン
     {
         float elapsedTime = 0f;
         isMoving = true;
