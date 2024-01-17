@@ -27,21 +27,21 @@ public class Player : MonoBehaviour
                 StartCoroutine(MovePlayer(Vector3.forward * movementWidth));
             }
         }
-        if (!Physics.Raycast(transform.position, Vector3.right, 1.1f))
+        if (!Physics.Raycast(transform.position, Vector3.left, 1.1f))
         {
             if (!isMoving && Input.GetKeyDown(KeyCode.A))
             {
                 StartCoroutine(MovePlayer(Vector3.left * movementWidth));
             }
         }
-        if (!Physics.Raycast(transform.position, Vector3.forward, 1.1f))
+        if (!Physics.Raycast(transform.position, Vector3.back, 1.1f))
         {
             if (!isMoving && Input.GetKeyDown(KeyCode.S))
             {
                 StartCoroutine(MovePlayer(Vector3.back * movementWidth));
             }
         }
-        if (!Physics.Raycast(transform.position, Vector3.forward, 1.1f))
+        if (!Physics.Raycast(transform.position, Vector3.right, 1.1f))
         {
             if (!isMoving && Input.GetKeyDown(KeyCode.D))
             {
