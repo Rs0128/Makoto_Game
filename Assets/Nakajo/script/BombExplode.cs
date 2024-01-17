@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bomb : MonoBehaviour
+public class BombExplode : MonoBehaviour
 {
     [SerializeField] public float timeElapsed =0;
     [SerializeField]GameObject SmokePrefab;
+    private List<Vector3> smokePositions = new List<Vector3>();
+
+    public List<Vector3> SmokePositions { private get => smokePositions; set => smokePositions = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +22,10 @@ public class Bomb : MonoBehaviour
         timeElapsed += Time.deltaTime;
         if(timeElapsed >= 3.0f)
         {
-            Instantiate(SmokePrefab,transform.position, Quaternion.identity);
+            for(int i = 0; i < smokePositions.Count; i++)
+            {
+                Instantiate(SmokePrefab, smokePositions[i], Quaternion.identity);
+            }
             Destroy(this.gameObject);
         }
     }

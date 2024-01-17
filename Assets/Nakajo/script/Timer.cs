@@ -24,7 +24,7 @@ public class timer : MonoBehaviour
         var span = new TimeSpan(0,0,(int)countdownSeconds);
         timeText.text = span.ToString(@"mm\:ss");
 
-        if (countdownSeconds <= 0);
+        if (countdownSeconds <= 0)
         {
             //’EoŒûoŒ»
         }
