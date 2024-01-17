@@ -69,4 +69,18 @@ public class Player : MonoBehaviour
         isMoving = false;
 
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("”š’e‚âenemy‚Ìƒ^ƒO"))
+            {
+                PlayerDeath();
+            }
+    }
+
+    void PlayerDeath()
+    {
+           Debug.Log("Ž€–S");
+    }
 }
