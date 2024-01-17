@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &324712833
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5027,7 +5027,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &675628121
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5286,8 +5286,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 985855630}
+  - component: {fileID: 985855631}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: StageManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5302,12 +5303,30 @@ Transform:
   m_GameObject: {fileID: 985855629}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.625351, y: 5.656979, z: 8.11}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &985855631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985855629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289c681148e5c264fb15345a3c989c3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wall: {fileID: 8682990719749657411, guid: 646076f27d9d5314680dce0709deeadc, type: 3}
+  block: {fileID: 8682990719749657411, guid: 646076f27d9d5314680dce0709deeadc, type: 3}
+  ground: {fileID: 515703366768023467, guid: b3c46b113446d934097b034d6fac7cc3, type: 3}
+  player: {fileID: 2956288361982140950, guid: 001d5050717b35749a3f1efa3354bd28, type: 3}
+  enemy: {fileID: 2567693365081288379, guid: c6d3304eb708beb478be09995ccafc05, type: 3}
+  markar: {fileID: 0}
 --- !u!1001 &1170761987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5652,6 +5671,7 @@ MonoBehaviour:
   - {fileID: 1495619413}
   - {fileID: 1340492513}
   - {fileID: 944748768}
+  stageManager: {fileID: 985855631}
 --- !u!1001 &2115832073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5723,7 +5743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1949420359643013173, guid: e2e2fe34558db1949865ec157f392fcd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3940734044672132803, guid: e2e2fe34558db1949865ec157f392fcd, type: 3}
       propertyPath: m_LocalPosition.x

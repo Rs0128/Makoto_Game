@@ -166,4 +166,84 @@ public class StageManager : MonoBehaviour
         Vector3 movePosition = new Vector3(moveDirections[random].x, 0f, moveDirections[random].y);
         return movePosition;
     }
+
+    private enum ExplodePatern
+    {
+        Horizontal,
+        Vertical,
+        Cross
+    }
+
+    public Vector3 RandomBombPosition()
+    {
+        List<Vector3> list = new List<Vector3>();
+        for(int i = 0; i < stageInfo.GetLength(0); i++)
+        {
+            for(int j = 0; j < stageInfo.GetLength(1); j++)
+            {
+                if(stageInfo[i,j] != (int)Stage.Wall && stageInfo[i,j] != (int)Stage.Block) 
+                {
+                    list.Add(new Vector3(i, 0f, j));
+                } 
+            }
+        }
+
+        return list[Random.Range(0, list.Count)];
+    }
+
+    public List<Vector3> ExplodePosition(int patern, Vector3 bombPos)
+    {
+        Vector2Int pos = new Vector2Int((int)bombPos.x, (int)bombPos.z);
+        List<Vector3> positions = new List<Vector3>();
+        positions.Add(bombPos);
+        switch (patern)
+        {
+            case ((int)ExplodePatern.Horizontal):
+                for (int i = pos.x; i < stageInfo.GetLength(0); i++)
+                {
+                    if (stageInfo[i, pos.y] == (int)Stage.Block || stageInfo[pos.y, i] == (int)Stage.Wall) break;
+                    //if(stageInfo[i, pos.y] != (int)Stage.Block && stageInfo[i, pos.y] != (int)Stage.Wall)
+                    else
+                    {
+                        positions.Add(new Vector3(pos.y, 0f, i));
+                    }
+                }
+                for (int i = pos.x; i > 0; i--)
+                {
+                    if (stageInfo[pos.y, i] == (int)Stage.Block || stageInfo[pos.y, i] == (int)Stage.Wall) break;
+                    //if(stageInfo[i, pos.y] != (int)Stage.Block && stageInfo[i, pos.y] != (int)Stage.Wall)
+                    else
+                    {
+                        positions.Add(new Vector3(pos.y, 0f, i));
+                    }
+                }
+                break;
+
+            case ((int)ExplodePatern.Vertical):
+                for(int i = pos.x; i < stageInfo.GetLength(0); i++)
+                {
+                    if(stageInfo[i, pos.y] == (int)Stage.Block || stageInfo[i, pos.y] == (int)Stage.Wall) break;
+                    //if(stageInfo[i, pos.y] != (int)Stage.Block && stageInfo[i, pos.y] != (int)Stage.Wall)
+                    else
+                    {
+                        positions.Add(new Vector3(i, 0f, pos.y));
+                    }
+                }
+                for (int i = pos.x; i > 0; i--)
+                {
+                    if (stageInfo[i, pos.y] == (int)Stage.Block || stageInfo[i, pos.y] == (int)Stage.Wall) break;
+                    //if(stageInfo[i, pos.y] != (int)Stage.Block && stageInfo[i, pos.y] != (int)Stage.Wall)
+                    else
+                    {
+                        positions.Add(new Vector3(i, 0f, pos.y));
+                    }
+                }
+                break;
+            case ((int)ExplodePatern.Cross):
+
+                break;
+        }
+
+        return positions;
+    }
 }
