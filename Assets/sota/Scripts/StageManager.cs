@@ -88,6 +88,7 @@ public class StageManager : MonoBehaviour
                     case (int)Stage.Maekar: stageObject = markar;break;
                     default: break;
                 }
+                if(stageObject==player||stageObject==enemy)pos.y=0.5f;
                 if(stageObject != null)
                 Instantiate(stageObject, pos, Quaternion.identity, this.transform);
             }

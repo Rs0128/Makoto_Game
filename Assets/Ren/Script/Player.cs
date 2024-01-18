@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Bomb"))
+        if(other.CompareTag("Bomb") || other.CompareTag("enemy"))
             {
                 PlayerDeath();
             }

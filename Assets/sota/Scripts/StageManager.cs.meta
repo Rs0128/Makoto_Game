@@ -3,7 +3,13 @@ guid: 289c681148e5c264fb15345a3c989c3a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - wall: {instanceID: 0}
+  - block: {instanceID: 0}
+  - ground: {instanceID: 0}
+  - player: {instanceID: 0}
+  - enemy: {instanceID: 0}
+  - markar: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
