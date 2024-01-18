@@ -7,7 +7,7 @@ TagManager:
   - point
   - Bomb
   - wall
-  - enemy
+  - Enemy
   layers:
   - Default
   - TransparentFX
