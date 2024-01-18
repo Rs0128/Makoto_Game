@@ -8,7 +8,7 @@ public class BombCreate : MonoBehaviour
     [SerializeField] GameObject bombPrefab;
     [SerializeField]GameObject[] spawnPoints;
     [SerializeField] StageManager stageManager;
-    float spawnTime = 6.0f;//ボムが出る時間間隔
+    float spawnTime = 5.0f;//ボムが出る時間間隔
     float currentTime = 0f;//現在の時間
 
     
@@ -41,8 +41,9 @@ public class BombCreate : MonoBehaviour
     
     private List<Vector3> ExplodeRange(Vector3 pos)
     {
-        int patern = Random.Range(0, 3);
-        patern = 0;
-        return stageManager.ExplodePosition(patern, pos);
+        int pattern = Random.Range(0, 3);
+        //patern = 0;
+        Debug.Log("<color=green>" + (StageManager.ExplodePattern)pattern + "</color>");
+        return stageManager.ExplodePosition(pattern, pos);
     }
 }

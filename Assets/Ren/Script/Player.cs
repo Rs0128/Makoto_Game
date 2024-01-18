@@ -71,9 +71,9 @@ public class Player : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("爆弾やenemyのタグ"))
+        if(other.CompareTag("Bomb"))
             {
                 PlayerDeath();
             }
@@ -81,6 +81,8 @@ public class Player : MonoBehaviour
 
     void PlayerDeath()
     {
-           Debug.Log("死亡");
+        Debug.Log("死亡");
+        //アニメーションを再生して死ぬ
+        //シーンを切り替える
     }
 }
