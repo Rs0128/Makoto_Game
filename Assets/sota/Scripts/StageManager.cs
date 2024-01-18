@@ -28,7 +28,7 @@ public class StageManager : MonoBehaviour
         {2,0,1,0,1,0,1,0,1,0,2},
         {2,0,0,0,0,0,0,0,0,0,2},
         {2,0,1,0,1,0,1,0,1,0,2},
-        {2,0,0,0,0,0,0,0,0,4,0},
+        {2,0,0,0,0,0,0,0,0,4,2},
         {2,2,2,2,2,2,2,2,2,2,2}
     };
     public static int[,] makerinfo=
@@ -48,7 +48,7 @@ public class StageManager : MonoBehaviour
         {2,0,1,0,1,0,1,0,1,0,2},
         {2,5,0,5,0,5,0,5,0,5,2},
         {2,0,1,0,1,0,1,0,1,0,2},
-        {2,0,0,5,0,5,0,5,0,4,0},
+        {2,0,0,5,0,5,0,5,0,4,2},
         {2,2,2,2,2,2,2,2,2,2,2}
     };
 
@@ -179,7 +179,7 @@ public class StageManager : MonoBehaviour
         return movePosition;
     }
 
-    private enum ExplodePatern
+    public enum ExplodePattern
     {
         Horizontal,
         Vertical,
@@ -203,45 +203,24 @@ public class StageManager : MonoBehaviour
         return list[Random.Range(0, list.Count)];
     }
 
-    public List<Vector3> ExplodePosition(int patern, Vector3 bombPos)
+    public List<Vector3> ExplodePosition(int pattern, Vector3 bombPos)
     {
         Vector2Int pos = new Vector2Int((int)bombPos.x, (int)bombPos.z);
         List<Vector3> positions = new List<Vector3>();
         positions.Add(bombPos);
-        switch (patern)
+        switch (pattern)
         {
-            case ((int)ExplodePatern.Horizontal):
-                for (int i = pos.x; i < stageInfo.GetLength(0); i++)
+            case ((int)ExplodePattern.Horizontal):
+                for (int i = pos.x + 1; i < stageInfo.GetLength(0); i++)
                 {
-                    if (stageInfo[i, pos.y] == (int)Stage.Block || stageInfo[pos.y, i] == (int)Stage.Wall) break;
-                    //if(stageInfo[i, pos.y] != (int)Stage.Block && stageInfo[i, pos.y] != (int)Stage.Wall)
-                    else
-                    {
-                        positions.Add(new Vector3(pos.y, 0f, i));
-                    }
-                }
-                for (int i = pos.x; i > 0; i--)
-                {
-                    if (stageInfo[pos.y, i] == (int)Stage.Block || stageInfo[pos.y, i] == (int)Stage.Wall) break;
-                    //if(stageInfo[i, pos.y] != (int)Stage.Block && stageInfo[i, pos.y] != (int)Stage.Wall)
-                    else
-                    {
-                        positions.Add(new Vector3(pos.y, 0f, i));
-                    }
-                }
-                break;
-
-            case ((int)ExplodePatern.Vertical):
-                for(int i = pos.x; i < stageInfo.GetLength(0); i++)
-                {
-                    if(stageInfo[i, pos.y] == (int)Stage.Block || stageInfo[i, pos.y] == (int)Stage.Wall) break;
+                    if (stageInfo[i, pos.y] == (int)Stage.Block || stageInfo[i, pos.y] == (int)Stage.Wall) break;
                     //if(stageInfo[i, pos.y] != (int)Stage.Block && stageInfo[i, pos.y] != (int)Stage.Wall)
                     else
                     {
                         positions.Add(new Vector3(i, 0f, pos.y));
                     }
                 }
-                for (int i = pos.x; i > 0; i--)
+                for (int i = pos.x - 1; i > 0; i--)
                 {
                     if (stageInfo[i, pos.y] == (int)Stage.Block || stageInfo[i, pos.y] == (int)Stage.Wall) break;
                     //if(stageInfo[i, pos.y] != (int)Stage.Block && stageInfo[i, pos.y] != (int)Stage.Wall)
@@ -251,8 +230,64 @@ public class StageManager : MonoBehaviour
                     }
                 }
                 break;
-            case ((int)ExplodePatern.Cross):
 
+            case ((int)ExplodePattern.Vertical):
+                for (int i = pos.y + 1; i < stageInfo.GetLength(1); i++)
+                {
+                    if (stageInfo[pos.x, i] == (int)Stage.Block || stageInfo[pos.x, i] == (int)Stage.Wall) break;
+                    else
+                    {
+                        positions.Add(new Vector3(pos.x, 0f, i));
+                    }
+                }
+                for (int i = pos.y - 1; i > 0; i--)
+                {
+                    if (stageInfo[pos.x, i] == (int)Stage.Block || stageInfo[pos.x, i] == (int)Stage.Wall) break;
+                    //if(stageInfo[i, pos.y] != (int)Stage.Block && stageInfo[i, pos.y] != (int)Stage.Wall)
+                    else
+                    {
+                        positions.Add(new Vector3(pos.x, 0f, i));
+                    }
+                }
+                break;
+
+            case ((int)ExplodePattern.Cross):
+                for (int i = pos.y + 1; i < stageInfo.GetLength(1); i++)
+                {
+                    if (stageInfo[pos.x, i] == (int)Stage.Block || stageInfo[pos.x, i] == (int)Stage.Wall) break;
+                    //if(stageInfo[i, pos.y] != (int)Stage.Block && stageInfo[i, pos.y] != (int)Stage.Wall)
+                    else
+                    {
+                        positions.Add(new Vector3(pos.x, 0f, i));
+                    }
+                }
+                for (int i = pos.y - 1; i > 0; i--)
+                {
+                    if (stageInfo[pos.x, i] == (int)Stage.Block || stageInfo[pos.x, i] == (int)Stage.Wall) break;
+                    //if(stageInfo[i, pos.y] != (int)Stage.Block && stageInfo[i, pos.y] != (int)Stage.Wall)
+                    else
+                    {
+                        positions.Add(new Vector3(pos.x, 0f, i));
+                    }
+                }
+                for (int i = pos.x + 1; i < stageInfo.GetLength(0); i++)
+                {
+                    if (stageInfo[i, pos.y] == (int)Stage.Block || stageInfo[i, pos.y] == (int)Stage.Wall) break;
+                    //if(stageInfo[i, pos.y] != (int)Stage.Block && stageInfo[i, pos.y] != (int)Stage.Wall)
+                    else
+                    {
+                        positions.Add(new Vector3(i, 0f, pos.y));
+                    }
+                }
+                for (int i = pos.x - 1; i > 0; i--)
+                {
+                    if (stageInfo[i, pos.y] == (int)Stage.Block || stageInfo[i, pos.y] == (int)Stage.Wall) break;
+                    //if(stageInfo[i, pos.y] != (int)Stage.Block && stageInfo[i, pos.y] != (int)Stage.Wall)
+                    else
+                    {
+                        positions.Add(new Vector3(i, 0f, pos.y));
+                    }
+                }
                 break;
         }
 
