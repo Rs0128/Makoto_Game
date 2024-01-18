@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 8682990719749657411, guid: 646076f27d9d5314680dce0709deeadc, type: 3}
-  block: {fileID: 8994563533488622966, guid: e0e3681104d85224f8c0ac5de94f278b, type: 3}
+  block: {fileID: 8682990719749657411, guid: 646076f27d9d5314680dce0709deeadc, type: 3}
   ground: {fileID: 515703366768023467, guid: b3c46b113446d934097b034d6fac7cc3, type: 3}
   player: {fileID: 2956288361982140950, guid: 001d5050717b35749a3f1efa3354bd28, type: 3}
   enemy: {fileID: 2567693365081288379, guid: c6d3304eb708beb478be09995ccafc05, type: 3}

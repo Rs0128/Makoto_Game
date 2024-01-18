@@ -10,6 +10,8 @@ public class EnemyMove : MonoBehaviour
     private float moveDuration = 1f; // ˆÚ“®‚·‚éŠÔŠu
     private float moveTime = 0.5f; // ˆÚ“®‚ÉŽg‚¤ŽžŠÔ
 
+    public Vector3 pos;
+
     private void Awake()
     {
         stageManager = GameObject.Find("StageManager").GetComponent<StageManager>();
@@ -43,12 +45,8 @@ public class EnemyMove : MonoBehaviour
     {
         if (other.CompareTag("Bomb"))
         {
-            EnemyDeath();
+            transform.position = new Vector3(pos.x, pos.y, pos.z);
         }
     }
-
-    void EnemyDeath()
-    {
-
-    }
+   
 }
