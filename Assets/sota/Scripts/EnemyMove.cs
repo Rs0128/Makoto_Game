@@ -38,4 +38,17 @@ public class EnemyMove : MonoBehaviour
         }
         this.transform.position = targetPos;
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bomb"))
+        {
+            EnemyDeath();
+        }
+    }
+
+    void EnemyDeath()
+    {
+
+    }
 }
