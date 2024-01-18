@@ -189,11 +189,11 @@ public class StageManager : MonoBehaviour
     public Vector3 RandomBombPosition()
     {
         List<Vector3> list = new List<Vector3>();
-        for(int i = 0; i < stageInfo.GetLength(0); i++)
+        for(int i = 0; i < makerinfo.GetLength(0); i++)
         {
-            for(int j = 0; j < stageInfo.GetLength(1); j++)
+            for(int j = 0; j < makerinfo.GetLength(1); j++)
             {
-                if(stageInfo[i,j] != (int)Stage.Wall && stageInfo[i,j] != (int)Stage.Block) 
+                if(makerinfo[i,j] == (int)Stage.Maekar) 
                 {
                     list.Add(new Vector3(i, 0f, j));
                 } 

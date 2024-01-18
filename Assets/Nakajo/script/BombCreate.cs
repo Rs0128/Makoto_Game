@@ -8,7 +8,7 @@ public class BombCreate : MonoBehaviour
     [SerializeField] GameObject bombPrefab;
     [SerializeField]GameObject[] spawnPoints;
     [SerializeField] StageManager stageManager;
-    float spawnTime = 6.0f;//ボムが出る時間間隔
+    float spawnTime = 5.0f;//ボムが出る時間間隔
     float currentTime = 0f;//現在の時間
 
     
