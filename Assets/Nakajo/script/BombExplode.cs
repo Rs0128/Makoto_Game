@@ -5,7 +5,11 @@ using UnityEngine;
 public class BombExplode : MonoBehaviour
 {
     [SerializeField] public float timeElapsed =0;
-    [SerializeField]GameObject SmokePrefab;
+    [SerializeField] GameObject SmokePrefab;
+
+    List<GameObject> predictions = new List<GameObject>();
+    [SerializeField]GameObject BombPrediction;
+   // [SerializeField]BombCreate BombCopy;
     private List<Vector3> smokePositions = new List<Vector3>();
 
     public List<Vector3> SmokePositions { private get => smokePositions; set => smokePositions = value; }
@@ -13,7 +17,10 @@ public class BombExplode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    //    SmokePrefab = GameObject.Find("Smoke");
+        for (int i = 0; i < smokePositions.Count; i++)
+        {
+            predictions.Add(Instantiate(BombPrediction, smokePositions[i], Quaternion.identity));
+        }
     }
 
     // Update is called once per frame
@@ -22,7 +29,11 @@ public class BombExplode : MonoBehaviour
         timeElapsed += Time.deltaTime;
         if(timeElapsed >= 3.0f)
         {
-            for(int i = 0; i < smokePositions.Count; i++)
+            foreach (GameObject g in predictions)
+            {
+                Destroy(g);
+            }
+            for (int i = 0; i < smokePositions.Count; i++)
             {
                 Instantiate(SmokePrefab, smokePositions[i], Quaternion.identity);
             }
