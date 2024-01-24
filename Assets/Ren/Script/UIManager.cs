@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] Image countDownImage;
     [SerializeField] Text countDownText;
+    [SerializeField] GameManager SetTimer;
     int threeCount;
     float countDownElapsedTime;
     float countDownDuration = 3.0f;
@@ -45,6 +46,8 @@ public class UIManager : MonoBehaviour
             {
                 countDownImage.gameObject.SetActive(false);
                 countDownText.gameObject.SetActive(false);
+
+                SetTimer.ZeroTimer();
                 yield break;
             }
             yield return null;

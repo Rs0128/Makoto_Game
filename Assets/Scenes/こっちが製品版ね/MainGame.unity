@@ -218,7 +218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &284734004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809d26a994c32074da3ba505bda5d30c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombPrefab: {fileID: 723274481123483303, guid: 60294b69fc9857e4381424cddb231dae, type: 3}
+  bombPrefab: {fileID: 4248989891440721311, guid: e9bbd0ef552229442a2ccd995f0ab76d, type: 3}
   spawnPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -284,6 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countDownImage: {fileID: 1869342760}
   countDownText: {fileID: 102834473}
+  SetTimer: {fileID: 850022246}
 --- !u!4 &314376034
 Transform:
   m_ObjectHideFlags: 0
@@ -633,6 +634,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c778b22ad37d546bf0a57ca2b3ad1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Timer: {fileID: 1793940819}
+  Bomb: {fileID: 284734003}
+  Stage: {fileID: 1084154798}
 --- !u!1 &1084154798
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1084154799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,7 +705,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1793940820
 RectTransform:
   m_ObjectHideFlags: 0
@@ -718,7 +722,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10, y: 516}
+  m_AnchoredPosition: {x: -10, y: 370}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1793940821
