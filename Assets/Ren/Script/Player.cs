@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -75,14 +76,17 @@ public class Player : MonoBehaviour
     {
         if(other.CompareTag("Bomb") || other.CompareTag("Enemy"))
             {
-                PlayerDeath();
+                StartCoroutine("PlayerDeath");
             }
     }
 
-    void PlayerDeath()
+    IEnumerator PlayerDeath()
     {
         Debug.Log("死亡");
-        //アニメーションを再生して死ぬ
-        //シーンを切り替える
+
+        yield return new WaitForSeconds(2f);//死ぬアニメーションを再生してからシーン遷移
+
+        SceneManager.LoadScene("Result");
+
     }
 }
