@@ -45,7 +45,7 @@ public class EnemyMove : MonoBehaviour
     {
         if (other.CompareTag("Bomb"))
         {
-            transform.position = new Vector3(pos.x, pos.y, pos.z);
+            transform.position = new Vector3(8, 8, 30);
         }
     }
    
