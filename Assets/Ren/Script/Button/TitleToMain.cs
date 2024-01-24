@@ -7,6 +7,6 @@ public class TitleToMain : MonoBehaviour
 {
     public void TitleButton()
     {
-        SceneManager.LoadScene("Ren_Scene");//ここをメインのシーン名に変更してください
+        SceneManager.LoadScene("MainGame");//ここをメインのシーン名に変更してください
     }
 }
