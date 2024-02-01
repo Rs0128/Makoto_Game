@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class TimeScript : MonoBehaviour
+public class TimerScript : MonoBehaviour
 {
     [SerializeField] Image timerImage;
     [SerializeField] float totalTime = 60f; //タイマーの時間
@@ -26,7 +27,10 @@ public class TimeScript : MonoBehaviour
         {
             Debug.Log("プレイヤーの勝利");
             //勝ったら勝利のメッセージ・シーン切り替え
+            SceneManager.LoadScene("ResultScene");
         }
+
+        
         
     }
 
