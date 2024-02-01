@@ -5310,7 +5310,7 @@ Transform:
   m_GameObject: {fileID: 985855629}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5369,6 +5369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeElapsed: 0
   SmokePrefab: {fileID: 1949420359643013173, guid: e2e2fe34558db1949865ec157f392fcd, type: 3}
+  TimeBomb: 5
   BombPrediction: {fileID: 8304413875933539060, guid: 5afc2d50ee2a93d4999ed005665e4f8d, type: 3}
 --- !u!65 &1159181749
 BoxCollider:
@@ -5470,6 +5471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeElapsed: 0
   SmokePrefab: {fileID: 1949420359643013173, guid: e2e2fe34558db1949865ec157f392fcd, type: 3}
+  TimeBomb: 5
   BombPrediction: {fileID: 8304413875933539060, guid: 5afc2d50ee2a93d4999ed005665e4f8d, type: 3}
 --- !u!1001 &1170761987
 PrefabInstance:
@@ -5821,6 +5823,8 @@ MonoBehaviour:
   - {fileID: 1340492513}
   - {fileID: 944748768}
   stageManager: {fileID: 985855631}
+  firspawnTime: 5
+  secspawnTime: 1
 --- !u!1001 &2115832073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5947,6 +5951,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7096620226922411125, guid: e2e2fe34558db1949865ec157f392fcd, type: 3}
+      propertyPath: timeElapsed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1949420359643013173, guid: e2e2fe34558db1949865ec157f392fcd, type: 3}
       propertyPath: m_Name
       value: Smoke
@@ -6008,6 +6016,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7832211922665246922, guid: e9bbd0ef552229442a2ccd995f0ab76d, type: 3}
+      propertyPath: TimeBomb
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -7832211922665246922, guid: e9bbd0ef552229442a2ccd995f0ab76d, type: 3}
+      propertyPath: timeElapsed
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 3742584938722837939, guid: e9bbd0ef552229442a2ccd995f0ab76d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.165159

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BombExplode : MonoBehaviour
 {
-    [SerializeField] public float timeElapsed =0;
+    [SerializeField] public float timeElapsed = 0;
     [SerializeField] GameObject SmokePrefab;
+    [SerializeField] public float TimeBomb = 0.0f;
 
     List<GameObject> predictions = new List<GameObject>();
     [SerializeField]GameObject BombPrediction;
@@ -27,7 +28,7 @@ public class BombExplode : MonoBehaviour
     void Update()
     {
         timeElapsed += Time.deltaTime;
-        if(timeElapsed >= 3.0f)
+        if(timeElapsed >= TimeBomb)
         {
             foreach (GameObject g in predictions)
             {
