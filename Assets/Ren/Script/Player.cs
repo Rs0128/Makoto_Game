@@ -84,9 +84,13 @@ public class Player : MonoBehaviour
     {
         Debug.Log("死亡");
 
-        yield return new WaitForSeconds(2f);//死ぬアニメーションを再生してからシーン遷移
+        yield return new WaitForSeconds(0.5f);//死ぬアニメーションを再生してからシーン遷移
 
         SceneManager.LoadScene("Result");
 
+    }
+    IEnumerator PlayerGoal()
+    {
+        yield return null;
     }
 }
