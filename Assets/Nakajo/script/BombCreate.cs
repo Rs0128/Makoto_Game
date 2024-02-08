@@ -18,7 +18,7 @@ public class BombCreate : MonoBehaviour
 
     void Update()
     {   totalTime+=Time.deltaTime;
-        if (totalTime < 90.0f) {
+        if (totalTime < 15.0f) {
             firstTime += Time.deltaTime;
             if (firstTime > firspawnTime)
             {
@@ -27,7 +27,7 @@ public class BombCreate : MonoBehaviour
             }
         }
         else
-        {   if(totalTime > 90f)
+        {   if(totalTime >15.0f)
                secondTime += Time.deltaTime;
                if (secondTime > secspawnTime)
                {
