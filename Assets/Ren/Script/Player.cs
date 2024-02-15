@@ -83,14 +83,11 @@ public class Player : MonoBehaviour
     IEnumerator PlayerDeath()
     {
         Debug.Log("死亡");
+        //死んだ瞬間に画面にでかでかと画像表示したい
+        yield return new WaitForSeconds(0.5f);//アニメーションを追加する場合は秒数を変更
 
-        yield return new WaitForSeconds(0.5f);//死ぬアニメーションを再生してからシーン遷移
-
-        SceneManager.LoadScene("Result");
+        SceneManager.LoadScene("Result(gameover)");
 
     }
-    IEnumerator PlayerGoal()
-    {
-        yield return null;
-    }
+    
 }

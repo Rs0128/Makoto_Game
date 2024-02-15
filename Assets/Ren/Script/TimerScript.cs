@@ -27,7 +27,7 @@ public class TimerScript : MonoBehaviour
         {
             Debug.Log("プレイヤーの勝利");
             //勝ったら勝利のメッセージ・シーン切り替え
-            SceneManager.LoadScene("ResultScene");
+            SceneManager.LoadScene("Result");
         }
 
         
