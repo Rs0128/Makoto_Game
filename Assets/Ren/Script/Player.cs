@@ -12,13 +12,19 @@ public class Player : MonoBehaviour
     [SerializeField] float moveTime; // 移動にかかる時間
     [Tooltip("移動幅")]
     [SerializeField] float movementWidth;
+    Animator animator;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
         PlayerControl();
-
     }
 
+    
     void PlayerControl()
     {
         if (!Physics.Raycast(transform.position, Vector3.forward, 1.1f))
@@ -26,13 +32,18 @@ public class Player : MonoBehaviour
             if (!isMoving && Input.GetKeyDown(KeyCode.W))
             {
                 StartCoroutine(MovePlayer(Vector3.forward * movementWidth));
+                transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                animator.SetBool("is_Running", true);
             }
         }
+
         if (!Physics.Raycast(transform.position, Vector3.left, 1.1f))
         {
             if (!isMoving && Input.GetKeyDown(KeyCode.A))
             {
                 StartCoroutine(MovePlayer(Vector3.left * movementWidth));
+                transform.rotation = Quaternion.Euler(0f, -90f, 0f);
+                animator.SetBool("is_Running", true);
             }
         }
         if (!Physics.Raycast(transform.position, Vector3.back, 1.1f))
@@ -40,6 +51,8 @@ public class Player : MonoBehaviour
             if (!isMoving && Input.GetKeyDown(KeyCode.S))
             {
                 StartCoroutine(MovePlayer(Vector3.back * movementWidth));
+                transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+                animator.SetBool("is_Running", true);
             }
         }
         if (!Physics.Raycast(transform.position, Vector3.right, 1.1f))
@@ -47,6 +60,8 @@ public class Player : MonoBehaviour
             if (!isMoving && Input.GetKeyDown(KeyCode.D))
             {
                 StartCoroutine(MovePlayer(Vector3.right * movementWidth));
+                transform.rotation = Quaternion.Euler(0f, 90f, 0f);
+                animator.SetBool("is_Running", true);
             }
         }
     }
@@ -68,6 +83,7 @@ public class Player : MonoBehaviour
 
         transform.position = targetPosition;
         isMoving = false;
+        animator.SetBool("is_Running", false);
 
     }
 
@@ -83,8 +99,8 @@ public class Player : MonoBehaviour
     IEnumerator PlayerDeath()
     {
         Debug.Log("死亡");
-        //死んだ瞬間に画面にでかでかと画像表示したい
-        yield return new WaitForSeconds(0.5f);//アニメーションを追加する場合は秒数を変更
+        animator.SetBool("is_Death", true);
+        yield return new WaitForSeconds(2f);
 
         SceneManager.LoadScene("Result(gameover)");
 

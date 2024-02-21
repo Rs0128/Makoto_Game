@@ -7,6 +7,7 @@ public class NavEnemy : MonoBehaviour
 {
     NavMeshAgent enemyNavMesh;
     [SerializeField] GameObject Player;
+    [SerializeField] GameObject GameObject;
 
     void Start()
     {
@@ -17,4 +18,13 @@ public class NavEnemy : MonoBehaviour
     {
         enemyNavMesh.SetDestination(Player.transform.position);
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bomb"))
+        {
+            GameObject.SetActive(false);
+        }
+    }
 }
+        
+        
