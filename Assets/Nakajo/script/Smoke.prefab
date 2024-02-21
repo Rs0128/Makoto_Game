@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3940734044672132803}
-  - component: {fileID: 865356591508931433}
-  - component: {fileID: 7136385506412212531}
-  - component: {fileID: -8690572281852898234}
+  - component: {fileID: 263335569810076781}
+  - component: {fileID: 427649713391236083}
+  - component: {fileID: 1835899075243737804}
   m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!198 &865356591508931433
+--- !u!198 &263335569810076781
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,8 +42,8 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949420359643013173}
   serializedVersion: 8
-  lengthInSec: 10
-  simulationSpeed: 8
+  lengthInSec: 8
+  simulationSpeed: 6
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -288,8 +288,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1.5
-      minScalar: 0.4
+      scalar: 1
+      minScalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1367,8 +1367,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.7803922, g: 0.3137255, b: 0.3137255, a: 1}
-        key1: {r: 1.0055304, g: 0.36078432, b: 0.1254902, a: 0.5372549}
+        key0: {r: 1.0055304, g: 0.36078432, b: 0.1254902, a: 0.6392157}
+        key1: {r: 0.7803922, g: 0.3137255, b: 0.3137255, a: 0.827451}
         key2: {r: 1, g: 1, b: 1, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4815,7 +4815,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &7136385506412212531
+--- !u!199 &427649713391236083
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -4887,14 +4887,14 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &-8690572281852898234
+--- !u!114 &1835899075243737804
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949420359643013173}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60f468ab3a3bc9f4f97df88757842eff, type: 3}
   m_Name: 
