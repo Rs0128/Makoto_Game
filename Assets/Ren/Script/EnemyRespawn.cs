@@ -25,7 +25,7 @@ public class EnemyRespawn : MonoBehaviour
 
     IEnumerator RespawnEnemy(GameObject Senemy)
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
 
         for(int i = 0;i< RespawnAnchor.Length; i++)
         {
