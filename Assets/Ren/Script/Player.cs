@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] NavEnemy[] Nenemy;
     [SerializeField] GameObject Bomb;
+    [SerializeField] GameObject BGM;
 
     void Start()
     {
@@ -97,6 +98,7 @@ public class Player : MonoBehaviour
         Debug.Log("HIT"+other.gameObject.tag);
         if(other.CompareTag("Bomb") || other.CompareTag("Enemy"))
             {
+            BGM.SetActive(false);
                 StartCoroutine("PlayerDeath");
             
             }

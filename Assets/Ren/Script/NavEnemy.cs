@@ -8,6 +8,8 @@ public class NavEnemy : MonoBehaviour
     NavMeshAgent enemyNavMesh;
     [SerializeField] GameObject Player;
     [SerializeField] GameObject GameObject;
+    [SerializeField] EnemyRespawn eR;
+    
 
     void Start()
     {
@@ -22,6 +24,8 @@ public class NavEnemy : MonoBehaviour
     {
         if (other.CompareTag("Bomb"))
         {
+            eR.Respawn(gameObject);
+
             GameObject.SetActive(false);
         }
     }
