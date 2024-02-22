@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 263335569810076781}
   - component: {fileID: 427649713391236083}
   - component: {fileID: 1835899075243737804}
+  - component: {fileID: 3038428245103825090}
   m_Layer: 0
   m_Name: Smoke
   m_TagString: Bomb
@@ -118,7 +119,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
+      scalar: 1.7
       minScalar: 1.5
       maxCurve:
         serializedVersion: 2
@@ -982,7 +983,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 200
+        scalar: 150
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -1055,17 +1056,17 @@ ParticleSystem:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.31028596
-          value: 0.91789055
-          inSlope: 1.0949128
-          outSlope: 1.0949128
+          time: 0.4918406
+          value: 0.9475537
+          inSlope: -0.0073048817
+          outSlope: -0.0073048817
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0.23270671
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.9842131
-          value: 0.5920553
+          time: 1
+          value: 0.027248606
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -2212,19 +2213,19 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
-          value: 1
+          time: 0.007892609
+          value: 0.9999981
           inSlope: 0
-          outSlope: -0.8
+          outSlope: 0
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0.2
+          value: 0
           inSlope: -0.8
-          outSlope: 0
+          outSlope: -0.8
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
@@ -3313,17 +3314,17 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.46323842
-          value: 0.983711
-          inSlope: 0.33202547
-          outSlope: 0.33202547
+          time: 0.4571132
+          value: 0.9457626
+          inSlope: 0.033601254
+          outSlope: 0.033601254
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.33333334
+          outWeight: 0.30497187
         - serializedVersion: 3
-          time: 1
-          value: 0.8264838
+          time: 0.9368286
+          value: 0.23713595
           inSlope: 1
           outSlope: 1
           tangentMode: 0
@@ -4919,6 +4920,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeElapsed: 0
+--- !u!65 &3038428245103825090
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949420359643013173}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4656514390486889320
 GameObject:
   m_ObjectHideFlags: 0
