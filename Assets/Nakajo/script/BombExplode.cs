@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BombExplode : MonoBehaviour
 {
-    [SerializeField]float timeElapsed = 0;//経過時間の基準
+    [SerializeField]float timeElapsed = 0;//爆発までの経過時間を測るやつ
 
     [Tooltip("これは爆風のPrehubです")]
     [SerializeField] GameObject SmokePrefab;
-    [SerializeField]float TimeBomb = 0.0f;//ボムの生成管理時間
+    [SerializeField]float TimeBomb = 0.0f;//ボムの爆発までの時間
 
     List<GameObject> predictions = new List<GameObject>();
     [SerializeField]GameObject BombPrediction;
