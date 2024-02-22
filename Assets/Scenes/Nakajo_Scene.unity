@@ -715,8 +715,8 @@ MonoBehaviour:
   - {fileID: 1340492513}
   - {fileID: 944748768}
   stageManager: {fileID: 985855631}
-  firspawnTime: 5
-  secspawnTime: 1
+  firspawnTime: 3
+  secspawnTime: 1.5
 --- !u!1001 &2115832073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -845,11 +845,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7832211922665246922, guid: e9bbd0ef552229442a2ccd995f0ab76d, type: 3}
       propertyPath: TimeBomb
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7832211922665246922, guid: e9bbd0ef552229442a2ccd995f0ab76d, type: 3}
       propertyPath: timeElapsed
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3742584938722837939, guid: e9bbd0ef552229442a2ccd995f0ab76d, type: 3}
       propertyPath: m_LocalPosition.x

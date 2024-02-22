@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BombExplode : MonoBehaviour
 {
-    [SerializeField] public float timeElapsed = 0;
+    [SerializeField]float timeElapsed = 0;//Œo‰ßŠÔ‚ÌŠî€
     [SerializeField] GameObject SmokePrefab;
-    [SerializeField] public float TimeBomb = 0.0f;
+    [SerializeField]float TimeBomb = 0.0f;//ƒ{ƒ€‚Ì¶¬ŠÇ—ŠÔ
 
     List<GameObject> predictions = new List<GameObject>();
     [SerializeField]GameObject BombPrediction;
