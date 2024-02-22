@@ -94,6 +94,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("HIT"+other.gameObject.tag);
         if(other.CompareTag("Bomb") || other.CompareTag("Enemy"))
             {
                 StartCoroutine("PlayerDeath");
@@ -110,7 +111,7 @@ public class Player : MonoBehaviour
         Nenemy[2].gameObject.SetActive(false);
         Bomb.SetActive(false);
         canMove = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         SceneManager.LoadScene("Result(gameover)");
 

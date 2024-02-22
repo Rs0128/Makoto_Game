@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class smoke : MonoBehaviour
 {
-    [SerializeField] public float timeElapsed = 0;
+    [SerializeField] float timeElapsed = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,7 @@ public class smoke : MonoBehaviour
     void Update()
     {
         timeElapsed += Time.deltaTime;
-        if (timeElapsed >= 1.0f)
+        if (timeElapsed >= 0.3f)
         {
             Destroy(this.gameObject);
         }
