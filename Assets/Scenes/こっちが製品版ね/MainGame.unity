@@ -309,6 +309,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3915886919096745593, guid: 646076f27d9d5314680dce0709deeadc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c5e0f64467033fc4b8d4cdbfc27ea56f, type: 2}
     - target: {fileID: 8682990719749657411, guid: 646076f27d9d5314680dce0709deeadc, type: 3}
       propertyPath: m_Name
       value: Wall (2)
@@ -1965,6 +1969,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3915886919096745593, guid: 646076f27d9d5314680dce0709deeadc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c5e0f64467033fc4b8d4cdbfc27ea56f, type: 2}
     - target: {fileID: 6788940119639982751, guid: 646076f27d9d5314680dce0709deeadc, type: 3}
       propertyPath: m_TagString
       value: wall
@@ -5245,6 +5253,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3915886919096745593, guid: 646076f27d9d5314680dce0709deeadc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c5e0f64467033fc4b8d4cdbfc27ea56f, type: 2}
     - target: {fileID: 6788940119639982751, guid: 646076f27d9d5314680dce0709deeadc, type: 3}
       propertyPath: m_TagString
       value: wall
@@ -5424,6 +5436,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3915886919096745593, guid: 646076f27d9d5314680dce0709deeadc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c5e0f64467033fc4b8d4cdbfc27ea56f, type: 2}
     - target: {fileID: 6788940119639982751, guid: 646076f27d9d5314680dce0709deeadc, type: 3}
       propertyPath: m_TagString
       value: wall
@@ -7880,7 +7896,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 23a7dca1502064b488454db6ddd0c91e, type: 2}
+  - {fileID: 2100000, guid: 20bc6af9d8d173148bf7f74ca9a329a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
