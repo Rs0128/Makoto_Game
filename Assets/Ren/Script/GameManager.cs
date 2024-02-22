@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject Stage;
     [SerializeField] GameObject Player;
     [SerializeField] GameObject Enemys;
+    [SerializeField] GameObject BGM;
     
 
     public void ZeroTimer()
@@ -20,7 +21,8 @@ public class GameManager : MonoBehaviour
         Bomb.SetActive(true);
         Stage.SetActive(true);
         Player.SetActive(true);
-        Enemys.SetActive(true);
+        //Enemys.SetActive(true);
+        BGM.SetActive(true);
         
 
     }

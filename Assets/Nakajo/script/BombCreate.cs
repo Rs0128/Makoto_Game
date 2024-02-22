@@ -10,9 +10,9 @@ public class BombCreate : MonoBehaviour
     [SerializeField] StageManager stageManager;
     [SerializeField]float firspawnTime = 3.0f;//前半の遅いボムの生成時間
     [SerializeField]float secspawnTime = 1.5f;//後半の早いボムの生成時間
-    float firstTime = 0f;
-    float secondTime = 0f;
-    float totalTime=0f;
+    float firstTime = 0f;//前半のボムの生成管理用の時間
+    float secondTime = 0f;//後半のボムの生成管理用の時間
+    float totalTime= 0f;//爆弾生成するときの前半後半を管理する時間
 
     
 

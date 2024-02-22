@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeElapsed: 0
   SmokePrefab: {fileID: 1949420359643013173, guid: e2e2fe34558db1949865ec157f392fcd, type: 3}
-  TimeBomb: 1
+  TimeBomb: 1.3
   BombPrediction: {fileID: 8304413875933539060, guid: 5afc2d50ee2a93d4999ed005665e4f8d, type: 3}
