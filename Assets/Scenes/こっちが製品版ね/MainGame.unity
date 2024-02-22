@@ -1321,7 +1321,7 @@ MonoBehaviour:
   - {fileID: 0}
   stageManager: {fileID: 1084154799}
   firspawnTime: 3
-  secspawnTime: 0.5
+  secspawnTime: 1
 --- !u!4 &284734005
 Transform:
   m_ObjectHideFlags: 0

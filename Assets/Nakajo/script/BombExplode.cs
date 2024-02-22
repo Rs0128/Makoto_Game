@@ -5,6 +5,8 @@ using UnityEngine;
 public class BombExplode : MonoBehaviour
 {
     [SerializeField]float timeElapsed = 0;//Œo‰ßŠÔ‚ÌŠî€
+
+    [Tooltip("‚±‚ê‚Í”š•—‚ÌPrehub‚Å‚·")]
     [SerializeField] GameObject SmokePrefab;
     [SerializeField]float TimeBomb = 0.0f;//ƒ{ƒ€‚Ì¶¬ŠÇ—ŠÔ
 
